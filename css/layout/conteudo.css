@@ -1,0 +1,41 @@
+/* ---------- Conteúdo principal ---------- */
+main {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: var(--esp-2);
+}
+
+.foto-pagina img {
+  width: 100%;
+  border: var(--borda-fina) solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  object-fit: cover;
+  aspect-ratio: 4 / 3;            /* celular: foto mais alta */
+}
+
+.foto-pagina {
+  margin: var(--esp-2) 0;
+}
+
+figcaption {
+  font-size: var(--fs-xs);
+  text-align: center;
+  margin-top: var(--esp-1);
+}
+
+/* Espaço entre as seções da página */
+.secao {
+  margin-block: var(--esp-5);
+}
+
+/* Foto de destaque e largura do conteúdo por breakpoint */
+@media (min-width: 480px) {
+  .foto-pagina img { aspect-ratio: 16 / 9; }
+}
+@media (min-width: 1200px) {
+  .foto-pagina img { aspect-ratio: 21 / 9; }
+}
+@media (min-width: 1400px) {
+  main { max-width: var(--largura-max-xxl); }
+}

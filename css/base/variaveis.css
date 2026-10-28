@@ -1,0 +1,134 @@
+/* ==========================================================
+   Focinho Molhado — Sistema de design (variáveis)
+   Tudo que é cor, fonte, espaçamento, borda e sombra
+   deve vir daqui. Não use valores "soltos" nos outros arquivos.
+   ========================================================== */
+
+:root {
+
+  /* ---------- 1. Paleta de cores ---------- */
+
+  /* Primárias (identidade da marca) */
+  --cobalto: #2F5BB7;
+  --ceruleo: #3A8FC9;
+  --ceruleo-escuro: #2A78B2;   /* fim do degradê do cabeçalho (contraste 4,6:1 com o texto do menu) */
+  --marinho: #14254F;
+
+  /* Secundárias (destaques, botões de ação, tags) */
+  --mel: #F0B93E;
+  --mel-claro: #FCEBC4;
+  --terracota: #993C1D;        /* texto sobre --mel-claro (tags/selos) */
+
+  /* Neutras (fundos, textos de apoio, bordas) */
+  --off-white: #FCFBF7;
+  --azul-gelo: #E7EEF8;
+  --cinza-azulado: #4C566A;
+  --cinza-borda: #C9D3E3;
+  --branco: #FFFFFF;
+
+  /* Estados / feedback (alerts, toasts, validação) */
+  --sucesso: #1E7B4F;
+  --sucesso-claro: #DDF3E7;
+  --erro: #B00020;
+  --erro-claro: #FBE3E6;
+  --aviso: #8A5A00;
+  --aviso-claro: #FFF1CC;
+  --info: var(--cobalto);
+  --info-claro: var(--azul-gelo);
+  --foco: #B85A00;             /* contorno de foco do teclado (contraste 4,5:1 com o fundo) */
+  --destaque-titulo: #EFEC6B;  /* sombra do título do hero */
+
+  /* Papéis das cores (use estes nos componentes) */
+  --cor-fundo: var(--off-white);
+  --cor-superficie: var(--branco);
+  --cor-card: var(--azul-gelo);
+  --cor-texto: var(--marinho);
+  --cor-texto-suave: var(--cinza-azulado);
+  --cor-titulo: var(--marinho);
+  --cor-link: var(--cobalto);
+  --cor-link-hover: var(--marinho);
+  --cor-borda: var(--cobalto);
+  --cor-rodape: var(--marinho);
+
+  /* ---------- 2. Tipografia ---------- */
+
+  --fonte: "Outfit", Arial, sans-serif;
+
+  /* Escala de tamanhos (1rem = 16px) */
+  --fs-xs: 0.875rem;    /* 14px — dicas, legendas pequenas */
+  --fs-sm: 1rem;        /* 16px — textos secundários, badges */
+  --fs-base: 1.125rem;  /* 18px — texto do corpo */
+  --fs-md: 1.25rem;     /* 20px — legend, subtítulos pequenos */
+  --fs-lg: 1.5rem;      /* 24px — h3 */
+  --fs-xl: 2rem;        /* 32px — h2, números de impacto */
+  --fs-xxl: 2.75rem;    /* 44px — h1 das páginas internas */
+  --fs-hero: 3.5rem;    /* 56px — título do hero */
+
+  /* Pesos */
+  --peso-normal: 400;
+  --peso-medio: 600;
+  --peso-forte: 700;
+  --peso-extra: 800;
+
+  /* Altura de linha */
+  --lh-titulo: 1.2;
+  --lh-texto: 1.6;
+
+  /* ---------- 3. Espaçamento modular (base 8px) ---------- */
+
+  --esp-1: 8px;
+  --esp-2: 16px;
+  --esp-3: 24px;
+  --esp-4: 32px;
+  --esp-5: 48px;
+  --esp-6: 64px;
+
+  /* Meio-passos (uso pontual em campos, badges e menus) */
+  --esp-05: 4px;
+  --esp-15: 12px;
+
+  /* ---------- 4. Bordas e sombras ---------- */
+
+  --raio-sm: 8px;       /* inputs */
+  --raio-md: 14px;      /* cards, fieldsets */
+  --raio-lg: 30px;      /* fotos */
+  --raio-pilula: 999px; /* menu, tags, badges */
+
+  --borda-fina: 2px;
+  --borda-grossa: 3px;
+
+  --sombra-sm: 0 2px 6px rgba(20, 37, 79, 0.10);
+  --sombra-md: 0 10px 24px rgba(20, 37, 79, 0.14);
+
+  /* ---------- 5. Layout ---------- */
+
+  --largura-max: 1200px;
+  --largura-max-xxl: 1320px;   /* telas ≥ 1400px */
+  --card-min: 240px;           /* largura mínima de um card na grade */
+  --colunas: 12;
+  --gutter: var(--esp-2);
+
+  /* ---------- 6. Movimento e camadas ---------- */
+
+  --transicao: 0.2s ease;
+
+  --z-menu: 100;
+  --z-toast: 200;
+  --z-modal: 300;
+}
+
+/* Breakpoints (variáveis CSS não funcionam dentro de @media,
+   então eles ficam documentados aqui e são usados nos arquivos):
+   --bp-sm:  480px   celulares grandes
+   --bp-md:  768px   tablets
+   --bp-lg:  992px   notebooks
+   --bp-xl:  1200px  desktops
+   --bp-xxl: 1400px  telas grandes
+*/
+
+/* Quem prefere menos animação (acessibilidade) */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transicao: 0s;
+  }
+}

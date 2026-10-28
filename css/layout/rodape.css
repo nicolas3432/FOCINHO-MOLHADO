@@ -1,0 +1,20 @@
+/* ---------- Rodapé ---------- */
+footer {
+  background-color: var(--cor-rodape);
+  color: var(--branco);
+  text-align: center;
+  padding: var(--esp-3) var(--esp-2);
+  margin-top: var(--esp-4);
+}
+
+footer p {
+  color: inherit;                 /* rodapé continua com texto branco */
+}
+
+footer a {
+  color: var(--mel-claro);
+}
+
+footer address {
+  font-style: normal;
+}

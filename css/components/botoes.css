@@ -1,0 +1,71 @@
+/* ==========================================================
+   Botões — estados: hover, focus (global em reset.css), active, disabled
+   ========================================================== */
+.botao {
+  display: inline-block;
+  background-color: var(--marinho);
+  color: var(--branco);
+  font-family: var(--fonte);
+  font-size: var(--fs-base);
+  font-weight: var(--peso-forte);
+  text-decoration: none;
+  text-align: center;
+  padding: var(--esp-15) var(--esp-3);
+  border: var(--borda-grossa) solid var(--marinho);
+  border-radius: var(--raio-sm);
+  cursor: pointer;
+  max-width: 100%;
+  transition: background-color var(--transicao), border-color var(--transicao), transform var(--transicao);
+}
+
+.botao:hover {
+  background-color: var(--cobalto);
+  border-color: var(--cobalto);
+  color: var(--branco);
+}
+
+
+.botao:active {
+  transform: translateY(1px);
+  background-color: var(--marinho);
+  border-color: var(--marinho);
+}
+
+.botao:disabled,
+.botao:disabled:hover,
+.botao[aria-disabled="true"] {
+  background-color: var(--cinza-borda);
+  border-color: var(--cinza-borda);
+  color: var(--cinza-azulado);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Botões grandes de chamada (hero) */
+.btn {
+  display: inline-block;
+  padding: var(--esp-3) var(--esp-5);
+  border-radius: var(--raio-sm);
+  font-weight: var(--peso-forte);
+  font-size: var(--fs-lg);
+  color: var(--branco);
+  text-decoration: none;
+  transition: background var(--transicao), transform var(--transicao);
+}
+.btn--primario   { background: var(--mel); color: var(--marinho); }
+.btn--secundario { background: var(--cobalto); }
+.btn:hover       { transform: translateY(-2px); background: var(--marinho); color: var(--branco); }
+.btn:active      { transform: translateY(0); }
+
+.btn:disabled,
+.btn:disabled:hover,
+.btn[aria-disabled="true"] {
+  background: var(--cinza-borda);
+  color: var(--cinza-azulado);
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 991px) {
+  .btn { padding: var(--esp-2) var(--esp-4); font-size: var(--fs-md); }
+}

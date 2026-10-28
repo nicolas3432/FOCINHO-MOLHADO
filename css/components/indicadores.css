@@ -1,0 +1,22 @@
+/* ---------- Valores e indicadores ---------- */
+.lista-valores {
+  padding-left: var(--esp-3);
+}
+
+.indicadores {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.indicadores strong {
+  display: block;
+  font-size: var(--fs-xl);
+  color: var(--cobalto);          /* números de impacto */
+}
+
+/* Barra de progresso da campanha */
+.progresso {
+  width: 100%;
+  height: var(--esp-3);
+}

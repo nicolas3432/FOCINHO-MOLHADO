@@ -1,0 +1,25 @@
+/* ---------- Cards ---------- */
+.card {
+  padding: var(--esp-3);
+  border: var(--borda-grossa) solid var(--cobalto);
+  border-radius: var(--raio-md);
+  background-color: var(--cor-card);
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0;
+}
+
+/* dentro do card o h2 não precisa ser tão grande quanto o h2 de seção */
+.card h2 {
+  font-size: var(--fs-lg);
+}
+
+
+/* Grade responsiva de cards (projetos, equipe, doação) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--card-min), 1fr));
+  gap: var(--esp-3);
+}

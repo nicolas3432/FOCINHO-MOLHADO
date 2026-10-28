@@ -1,0 +1,36 @@
+/* ---------- Cabeçalho (logo + botão do menu mobile) ---------- */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, var(--marinho), var(--cobalto), var(--ceruleo-escuro));
+  padding: var(--esp-1) var(--esp-2);
+}
+
+.logo {
+  margin: var(--esp-1) 0;
+  font-size: var(--fs-xl);
+}
+
+.logo a {
+  display: inline-flex;           /* alinha o ícone e o texto na mesma linha */
+  align-items: center;
+  text-decoration: none;
+  color: var(--off-white);
+}
+.logo a:hover {
+  color: var(--off-white);        /* o nome do logo não muda de cor no hover */
+}
+.logo a::before {
+  content: "";
+  width: 56px;
+  height: 46px;
+  background: url("../../img/logo-focinho.svg") no-repeat center / contain;
+  margin-right: var(--esp-15);
+}
+
+@media (min-width: 992px) {
+  header { padding: var(--esp-1) var(--esp-5); }
+  .logo { font-size: var(--fs-xxl); }
+}

@@ -1,0 +1,85 @@
+/* ==========================================================
+   Feedback: alerts, toasts e modal
+   ========================================================== */
+
+/* ---------- Alerts ---------- */
+.alerta {
+  padding: var(--esp-2);
+  border: var(--borda-fina) solid var(--info);
+  border-left-width: var(--esp-1);
+  border-radius: var(--raio-md);
+  background: var(--info-claro);
+  color: var(--cor-texto);
+}
+.alerta > :first-child { margin-top: 0; }
+.alerta > :last-child  { margin-bottom: 0; }
+.alerta p { color: inherit; }
+
+.alerta--info    { background: var(--info-claro);    border-color: var(--info); }
+.alerta--sucesso { background: var(--sucesso-claro); border-color: var(--sucesso); }
+.alerta--aviso   { background: var(--aviso-claro);   border-color: var(--aviso); }
+.alerta--erro    { background: var(--erro-claro);    border-color: var(--erro); }
+
+/* ---------- Toasts ---------- */
+.toasts {
+  position: fixed;
+  right: var(--esp-2);
+  bottom: var(--esp-2);
+  left: var(--esp-2);
+  display: grid;
+  justify-items: end;
+  gap: var(--esp-1);
+  z-index: var(--z-toast);
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-2);
+  max-width: 380px;
+  padding: var(--esp-2);
+  background: var(--marinho);
+  color: var(--branco);
+  border-left: var(--esp-1) solid var(--sucesso);
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-md);
+  pointer-events: auto;
+  animation: toast-entrada 0.25s ease;
+}
+.toast--erro { border-left-color: var(--erro); }
+.toast--aviso { border-left-color: var(--mel); }
+.toast p { margin: 0; color: inherit; }
+
+.toast__fechar {
+  font-family: var(--fonte);
+  font-size: var(--fs-md);
+  line-height: 1;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: var(--esp-1);
+  cursor: pointer;
+}
+
+@keyframes toast-entrada {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast { animation: none; }
+}
+
+/* ---------- Modal (elemento <dialog>) ---------- */
+.modal {
+  width: min(480px, calc(100vw - 32px));
+  padding: var(--esp-4);
+  border: var(--borda-grossa) solid var(--cobalto);
+  border-radius: var(--raio-md);
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  box-shadow: var(--sombra-md);
+}
+.modal::backdrop { background: rgba(20, 37, 79, 0.6); }
+.modal h2 { margin-top: 0; }

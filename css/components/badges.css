@@ -1,0 +1,34 @@
+/* ==========================================================
+   Badges (categorias) e tags (rótulos)
+   ========================================================== */
+.badge,
+.tag {
+  display: inline-block;
+  padding: var(--esp-05) var(--esp-15);
+  border-radius: var(--raio-pilula);
+  font-size: var(--fs-xs);
+  font-weight: var(--peso-medio);
+  line-height: var(--lh-texto);
+}
+
+.badge {
+  background: var(--mel-claro);
+  color: var(--terracota);
+}
+.badge--info    { background: var(--info-claro);    color: var(--info); }
+.badge--sucesso { background: var(--sucesso-claro); color: var(--sucesso); }
+.badge--aviso   { background: var(--aviso-claro);   color: var(--aviso); }
+.badge--erro    { background: var(--erro-claro);    color: var(--erro); }
+
+.tag {
+  background: var(--branco);
+  color: var(--cobalto);
+  border: var(--borda-fina) solid var(--cobalto);
+}
+
+.conquistas {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--esp-1);
+}

@@ -1,0 +1,25 @@
+/* ==========================================================
+   Focinho Molhado — folha de estilo principal (só importa os módulos)
+   Abordagem mobile-first.
+
+   base/        variáveis (design system) e estilos globais
+   layout/      grid de 12 colunas, cabeçalho, conteúdo, rodapé
+   components/  menu, botões, cards, formulários, badges, feedback...
+   ========================================================== */
+
+@import url("base/variaveis.css");
+@import url("base/reset.css");
+
+@import url("layout/grid.css");
+@import url("layout/cabecalho.css");
+@import url("layout/conteudo.css");
+@import url("layout/rodape.css");
+
+@import url("components/menu.css");
+@import url("components/botoes.css");
+@import url("components/cards.css");
+@import url("components/badges.css");
+@import url("components/formularios.css");
+@import url("components/feedback.css");
+@import url("components/indicadores.css");
+@import url("components/hero.css");

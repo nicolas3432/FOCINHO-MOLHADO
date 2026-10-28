@@ -1,0 +1,85 @@
+/* ---------- Formulários ---------- */
+form {
+  display: grid;
+  gap: var(--esp-2);
+}
+
+fieldset {
+  border: var(--borda-grossa) solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  background-color: var(--cor-card);
+  padding: var(--esp-2);
+  margin: 0;
+  display: grid;
+  gap: var(--esp-15);
+}
+
+legend {
+  font-weight: var(--peso-forte);
+  font-size: var(--fs-md);
+  color: var(--marinho);
+  padding: 0 var(--esp-1);
+}
+
+.campo {
+  display: grid;
+  gap: var(--esp-05);
+}
+
+label {
+  font-weight: var(--peso-medio);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  font-family: var(--fonte);
+  font-size: var(--fs-sm);
+  padding: var(--esp-15);
+  border: var(--borda-fina) solid var(--cinza-azulado);
+  border-radius: var(--raio-sm);
+  background-color: var(--branco);
+  color: var(--cor-texto);
+}
+
+input:user-valid,
+select:user-valid,
+textarea:user-valid {
+  border-color: var(--sucesso);
+  box-shadow: 0 0 0 1px var(--sucesso);   /* borda mais grossa: não depende só da cor */
+}
+
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+  border-color: var(--erro);
+  box-shadow: 0 0 0 1px var(--erro);
+}
+
+/* A dica de formato vira mensagem de erro quando o campo é inválido */
+.campo:has(:user-invalid) .dica {
+  color: var(--erro);
+  font-weight: var(--peso-medio);
+}
+.campo:has(:user-invalid) .dica::before {
+  content: "✕ ";
+}
+
+.dica {
+  font-size: var(--fs-xs);
+  color: var(--cinza-azulado);
+}
+
+.obrigatorio {
+  color: var(--erro);
+}
+
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  background-color: var(--azul-gelo);
+  color: var(--cinza-azulado);
+  cursor: not-allowed;
+}

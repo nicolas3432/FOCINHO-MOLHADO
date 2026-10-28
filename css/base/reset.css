@@ -1,0 +1,76 @@
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte);
+  font-size: var(--fs-base);
+  line-height: var(--lh-texto);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3 {
+  color: var(--cor-titulo);
+  line-height: var(--lh-titulo);
+}
+
+/* Hierarquia tipográfica: celular → a partir de 768px */
+h1 { font-size: var(--fs-xl); }
+h2 { font-size: var(--fs-lg); }
+h3 { font-size: var(--fs-md); }
+
+@media (min-width: 768px) {
+  h1 { font-size: var(--fs-xxl); }
+  h2 { font-size: var(--fs-xl); }
+  h3 { font-size: var(--fs-lg); }
+}
+
+/* parágrafos e legendas */
+p,
+figcaption {
+  color: var(--cor-texto-suave);
+}
+footer p {
+  color: inherit;                 /* rodapé continua com texto branco */
+}
+
+a {
+  color: var(--cor-link);
+}
+a:hover {
+  color: var(--cor-link-hover);
+  text-decoration-thickness: 2px;
+}
+
+/* Foco visível para navegação por teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 2px;
+}
+
+/* Link "pular para o conteúdo" (leitores de tela / teclado) */
+.pular {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--marinho);
+  color: var(--branco);
+  padding: var(--esp-1) var(--esp-2);
+  z-index: var(--z-modal);
+}
+.pular:focus {
+  left: var(--esp-1);
+}

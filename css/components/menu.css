@@ -1,0 +1,143 @@
+/* ==========================================================
+   Menu principal: links, submenu (dropdown) e hambúrguer mobile
+   ========================================================== */
+.menu__lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--esp-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: inline-block;
+  padding: var(--esp-15) var(--esp-2);
+  color: var(--off-white);        /* legível sobre o degradê */
+  text-decoration: none;
+  font-weight: var(--peso-medio);
+  border-radius: var(--raio-pilula);
+}
+
+nav a:hover {
+  background-color: var(--mel-claro);
+  color: var(--marinho);
+}
+
+nav a[aria-current="page"] {
+  background-color: var(--mel);   /* item ativo do menu */
+  color: var(--marinho);
+}
+
+.menu__item--dropdown {
+  position: relative; /* o submenu se posiciona em relação a este item */
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  list-style: none;
+  margin: 0;
+  padding: var(--esp-1) 0;
+  background: var(--branco);
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-md);
+  z-index: var(--z-menu);
+
+  /* escondido por padrão */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity var(--transicao), transform var(--transicao), visibility var(--transicao);
+}
+
+.submenu a {
+  display: block;
+  padding: var(--esp-15) var(--esp-2);
+  color: var(--marinho);
+  border-radius: 0;
+}
+
+.submenu a:hover,
+.submenu a:focus {
+  background: var(--mel-claro);
+  color: var(--marinho);
+}
+
+/* mostra ao passar o mouse OU ao navegar pelo teclado (acessibilidade) */
+.menu__item--dropdown:hover .submenu,
+.menu__item--dropdown:focus-within .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Botão hambúrguer: só aparece em telas < 992px e quando o JS está ativo */
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-1);
+  font-family: var(--fonte);
+  font-size: var(--fs-base);
+  font-weight: var(--peso-forte);
+  color: var(--off-white);
+  background: transparent;
+  padding: var(--esp-15) var(--esp-2);
+  border: var(--borda-fina) solid var(--off-white);
+  border-radius: var(--raio-pilula);
+  cursor: pointer;
+}
+.menu-toggle:hover,
+.menu-toggle[aria-expanded="true"] {
+  background-color: var(--mel-claro);
+  color: var(--marinho);
+}
+.menu-toggle[hidden] {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  nav {
+    flex-basis: 100%;
+  }
+  .menu--js .menu__lista {
+    display: none;
+  }
+  .menu--js.is-open .menu__lista {
+    display: flex;
+  }
+  .menu__lista {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--esp-05);
+    padding-bottom: var(--esp-1);
+  }
+  nav a {
+    display: block;
+  }
+  /* no celular o submenu fica aberto e recuado dentro do menu */
+  .submenu {
+    position: static;
+    min-width: 0;
+    padding: 0 0 0 var(--esp-3);
+    background: transparent;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  .submenu a {
+    color: var(--off-white);
+  }
+  .submenu a:hover,
+  .submenu a:focus {
+    color: var(--marinho);
+  }
+}
+
+@media (min-width: 992px) {
+  .menu-toggle { display: none; }
+}
